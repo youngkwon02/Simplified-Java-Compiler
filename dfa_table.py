@@ -107,15 +107,15 @@ dfa_table = {
         "T31": {"n":"T2", "FINAL":False},
 
     },
-    "ARITHMETIC_OPERATORS": {
+    "ARITHMETIC_OPERATOR": {
         "T0": {"+":"T1", "-":"T1", "*":"T1", "/":"T1", "FINAL":False},
         "T1": {"FINAL": True}
     },
-    "ASSIGNMENT_OPERATORS": {
+    "ASSIGNMENT_OPERATOR": {
         "T0": {"=":"T1", "FINAL":False},
         "T1": {"FINAL": True}
     },
-    "COMPARISON_OPERATORS": {
+    "COMPARISON_OPERATOR": {
         "T0": {"<":"T1", ">":"T2", "=":"T3", "!":"T4", "FINAL":False},
         "T1": {"=":"T5", "FINAL":True},
         "T2": {"=":"T5", "FINAL":True},

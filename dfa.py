@@ -23,7 +23,7 @@ class DFA:
             return "False"
 
     def cond_arithmetic_signedint(self, success_DFA):
-        return self.get_name() != "ARITHMETIC_OPERATORS" or (self.get_name() == "ARITHMETIC_OPERATORS" and "SIGNED_INTEGER" not in success_DFA)
+        return self.get_name() != "ARITHMETIC_OPERATOR" or (self.get_name() == "ARITHMETIC_OPERATOR" and "SIGNED_INTEGER" not in success_DFA)
 
     def get_record(self):
         return self.input_record
@@ -62,7 +62,7 @@ def is_identifier(curr_state, next_input):
 
 def is_comparison(curr_state, next_input):
     try:
-        dfa_table["COMPARISON_OPERATORS"][curr_state][next_input]
+        dfa_table["COMPARISON_OPERATOR"][curr_state][next_input]
         return True
     except KeyError:
         return False
