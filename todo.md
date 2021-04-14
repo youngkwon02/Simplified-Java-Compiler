@@ -4,6 +4,5 @@
 
 |  # | TODO LIST  |
 |:----:|:------------:|
-| 1  | A comma for seperating input arguments in functions  |
-| 2  |  Exception message for wrong input value |
-| 3  |  Use python formatter to follow the convention |
+| 1  | if identifier name is started with VTYPE..  |
+| 2  |  Use python formatter to follow the convention |

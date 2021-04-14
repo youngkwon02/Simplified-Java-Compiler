@@ -22,8 +22,8 @@ class DFA:
         else:
             return "False"
 
-    def cond_arithmetic_signedint(self, success_DFA):
-        return self.get_name() != "ARITHMETIC_OPERATOR" or (self.get_name() == "ARITHMETIC_OPERATOR" and "SIGNED_INTEGER" not in success_DFA)
+    def cond_vtype_identifier(self, success_DFA, index, file_content):
+        return self.get_name() != "VTYPE" or (self.get_name() == "VTYPE" and file_content[index] == " ")
 
     def get_record(self):
         return self.input_record

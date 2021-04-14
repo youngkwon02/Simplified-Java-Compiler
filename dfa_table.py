@@ -51,7 +51,7 @@ dfa_table = {
         "T4": {"'":"T5", "FINAL":False},
         "T5": {"FINAL": True}
     },
-    "BOOLEAN": {
+    "BOOLEAN_STRING": {
         "T0": {"t":"T1", "f":"T5", "FINAL":False},
         "T1": {"r":"T2", "FINAL":False},
         "T2": {"u":"T3", "FINAL":False},
