@@ -55,7 +55,7 @@ def main():
     DFA_identifier = DFA("IDENTIFIER")
     DFA_signedInteger = DFA("SIGNED_INTEGER")
     DFA_singleCharacter = DFA("SINGLE_CHARACTER")
-    DFA_BOOLEAN_STRING = DFA("BOOLEAN_STRING")
+    DFA_booleanString = DFA("BOOLEAN_STRING")
     DFA_literalString = DFA("LITERAL_STRING")
     DFA_keyword = DFA("KEYWORD")
     DFA_arithmeticOperators = DFA("ARITHMETIC_OPERATOR")
@@ -70,7 +70,7 @@ def main():
     DFA_rightBranket = DFA("RIGHT_BRANKET")
     DFA_comma = DFA("COMMA")
     DFA_whitespace = DFA("WHITESPACE")
-    DFA_list = [DFA_keyword, DFA_BOOLEAN_STRING, DFA_assignmentOperators, DFA_comparisonOperators, DFA_arithmeticOperators, DFA_signedInteger,
+    DFA_list = [DFA_keyword, DFA_booleanString, DFA_assignmentOperators, DFA_comparisonOperators, DFA_arithmeticOperators, DFA_signedInteger,
     DFA_terminatingSymbol, DFA_leftParen, DFA_rightParen, DFA_leftBrace, DFA_rightBrace, DFA_leftBranket, DFA_rightBranket, DFA_comma, DFA_whitespace,
     DFA_vtype, DFA_identifier, DFA_singleCharacter, DFA_literalString
     ] # 모든 DFA List, Ordered by priority

@@ -47,42 +47,9 @@ class DFA:
             else:
                 return ("fail", "mess")
 
-def is_identifier(curr_state, next_input):
-    try:
-        dfa_table["IDENTIFIER"][curr_state][next_input]
-        return True
-    except KeyError:
-        for key in dfa_table["IDENTIFIER"][curr_state].keys():
-                if key == "FINAL":
-                    break
-                if next_input in key:
-                    if dfa_table["IDENTIFIER"][curr_state][key] == "T1":
-                        return True
-        return False
-
 def is_comparison(curr_state, next_input):
     try:
         dfa_table["COMPARISON_OPERATOR"][curr_state][next_input]
         return True
     except KeyError:
         return False
-
-# test_dfa = DFA("SIGNED_INTEGER")
-# result = test_dfa.run("-")
-# print("-: ", result)
-# print(test_dfa.current_state)
-# print(test_dfa.is_final_state(), test_dfa.input_record)
-# result = test_dfa.run("1")
-# print("1: ", result)
-# result = test_dfa.run("+")
-# print("+: ", result)
-# result = test_dfa.run("a")
-# print("a: ", result)
-# result = test_dfa.run("t")
-# print("t: ", result)
-# result = test_dfa.run("i")
-# print("i: ", result)
-# result = test_dfa.run("c")
-# print("c: ", result)
-# print(test_dfa.current_state)
-# print(test_dfa.is_final_state(), test_dfa.input_record)
