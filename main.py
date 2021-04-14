@@ -1,9 +1,16 @@
 from dfa import DFA, is_comparison, is_identifier
+import sys
 import string
 DIGIT = string.digits
 
+if len(sys.argv) != 2:
+    print("Type input file name as an argument")
+    sys.exit()
+
+input_file_path = sys.argv[1]
+
 def read_input_file():
-    file = open("./test_code/test.java", mode='r', encoding='utf-8')
+    file = open(input_file_path, mode='r', encoding='utf-8')
     return file
 
 def init_success_dfa():
@@ -52,7 +59,8 @@ def main():
 
     f = read_input_file()
     file_content = f.read()
-    f_output = open("./output.txt", 'w')
+    output_file_name = input_file_path + "_output.txt"
+    f_output = open(output_file_name, 'w')
     index = 0
     keyword_flag = False
     while(True):
