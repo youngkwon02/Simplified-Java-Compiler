@@ -1,5 +1,6 @@
 from dfa_table import *
 
+
 class DFA:
     token_name = ""
     current_state = ""
@@ -42,10 +43,12 @@ class DFA:
                     self.current_state = dfa_table[self.token_name][self.current_state][key]
                     return ("going", "mess")
             if self.is_final_state() == "True":
-                self.input_record = self.input_record[0:len(self.input_record) - 1]
+                self.input_record = self.input_record[0:len(
+                    self.input_record) - 1]
                 return ("end", self.input_record, "back")
             else:
                 return ("fail", "mess")
+
 
 def is_comparison(curr_state, next_input):
     try:
