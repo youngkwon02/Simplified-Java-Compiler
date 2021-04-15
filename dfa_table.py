@@ -4,9 +4,8 @@ DIGIT = string.digits
 DIGIT_1TO9 = string.digits[1:9]
 WHITESPACE = string.whitespace
 SYMBOL_FOR_CHAR = ""
-for symbol in string.printable:
-    if len(symbol) == 1 and symbol != "'" and symbol not in WHITESPACE and symbol not in DIGIT:
-        SYMBOL_FOR_CHAR += symbol
+for symbol in LETTER:
+    SYMBOL_FOR_CHAR += symbol
 
 SYMBOL_FOR_STR = ""
 for symbol in string.printable:
