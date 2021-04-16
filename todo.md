@@ -4,4 +4,4 @@
 
 |  # | TODO LIST  |
 |:----:|:------------:|
-| 1  |  Use python formatter to follow the convention |
+| 1  |  a - 1 doesn't use SIGNED_INTEGER -1 |

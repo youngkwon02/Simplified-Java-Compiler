@@ -142,11 +142,11 @@ dfa_table = {
         "T0": {"}": "T1", "FINAL": False},
         "T1": {"FINAL": True}
     },
-    "LEFT_BRANKET": {
+    "LEFT_BRACKET": {
         "T0": {"[": "T1", "FINAL": False},
         "T1": {"FINAL": True}
     },
-    "RIGHT_BRANKET": {
+    "RIGHT_BRACKET": {
         "T0": {"]": "T1", "FINAL": False},
         "T1": {"FINAL": True}
     },
