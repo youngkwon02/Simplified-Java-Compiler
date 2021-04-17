@@ -122,7 +122,7 @@ def main():
                     # 해당 DFA를 현재까지 입력을 처리 가능했던 DFA list인 Success_DFA에서 삭제
                     success_DFA.remove(dfa.get_name())
                     if len(success_DFA) == 0:  # 만약 삭제한 이후, 현재까지의 입력을 처리 가능한 DFA가 남아있지 않다면
-                        text = "ERROR_DETECTED: line " + \
+                        text = "ERROR_DETECTED(CAN NOT PROCESS a symbol): line " + \
                             str(get_line_number(index, file_content)) + ", in " + \
                             input_file_path + "\n"  # ERROR로 판단하여 프로그램 종료 및 message 출력
                         f_output.write(text)
@@ -150,7 +150,7 @@ def main():
                                 break
                             else: # LEFT_PAREN이 나오지 않았거나, LEFT_PAREN보다 RIGHT_PAREN이 뒤에 나왔다면, 이는 Seperating comma가 아니므로 처리할 수 없다고 판단
                                 # 왜냐하면 Lexical Analyzer가 일반적인 Comma를 처리할 수 있다고 언급되지 않았음
-                                text = "ERROR_DETECTED: line " + \
+                                text = "ERROR_DETECTED(CAN NOT PROCESS a symbol): line " + \
                                     str(get_line_number(index, file_content)) + ", in " + \
                                     input_file_path + "\n"  # ERROR로 판단하여 프로그램 종료 및 message 출력
                                 f_output.write(text)
@@ -184,7 +184,7 @@ def main():
                                         f_output.write(text)
                                         break
                                     else:
-                                        text = "ERROR_DETECTED: line " + \
+                                        text = "ERROR_DETECTED(CAN NOT PROCESS a symbol): line " + \
                                             str(get_line_number(index, file_content)) + ", in " + \
                                             input_file_path + "\n"  # ERROR로 판단 및 메시지 출력
                                         f_output.write(text)
@@ -194,7 +194,7 @@ def main():
                                         "> " + result[1] + "\n"
                                     f_output.write(text)
                             else:
-                                text = "ERROR_DETECTED: line " + \
+                                text = "ERROR_DETECTED(CAN NOT PROCESS a symbol): line " + \
                                 str(get_line_number(index, file_content)) + ", in " + \
                                 input_file_path + "\n"  # ERROR로 판단 및 메시지 출력
                                 f_output.write(text)
