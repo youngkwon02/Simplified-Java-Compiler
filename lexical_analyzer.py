@@ -157,9 +157,9 @@ def main():
                                 sys.exit()
                         else:
                             if success != "WHITESPACE": # Whitespace는 출력 생략
-                                if result[1][0] == "-" and not (index-1 - len(result[1])) < 0 and check_before_input(index-1 - len(result[1]), file_content) not in ["=", '+', '-', '*', '/', "", '\n', ',', '(', '{', '[']:
+                                if (result[1][0] == "-" and not (index-1 - len(result[1])) < 0 and check_before_input(index-1 - len(result[1]), file_content) not in ["=", '+', '-', '*', '/', "", '\n', ',', '(', '{', '[']):
                                     # -로 시작할 경우, 이는 ARITHMETIC OPER인지, SIGNED_INTEGER인지 판단 필요
-                                    # 만약 -로 시작할 경우, Whitespace를 제외한 바로 직전의 문자가 +, -, *, /, =, '\n' 가 아니라면 이는 ARITH OPER
+                                    # 만약 -로 시작할 경우, Whitespace를 제외한 바로 직전의 문자가 +, -, *, /, =, '\n', ',', '(', '{', '[' 가 아니라면 이는 ARITH OPER
                                     text = "<ARITHMETIC_OPERATOR> -\n"
                                     index -= (len(result[1]) - 1)
                                     f_output.write(text)
@@ -176,7 +176,7 @@ def main():
                 else:  # Status가 Going일때, 즉 다음 input을 더 받아야 판단이 가능한데
                     if index == len(file_content) - 1: # 다음 input이 없을 경우(EOF)의 token name과 value 출력
                         for success in success_DFA:
-                            if success != "WHITESPACE":
+                            if success != "WHITESPACE" and dfa.is_final_state() == "True":
                                 # 아래 line에서 Index는 마지막 글자라서 보통 case보다 이미 1이 작음, index에서 1을 따로 빼지 않고 check_before_input
                                 if success == "COMMA":
                                     if is_before_lparen(index-1, file_content):
@@ -193,6 +193,12 @@ def main():
                                     text = "<" + success + \
                                         "> " + result[1] + "\n"
                                     f_output.write(text)
+                            else:
+                                text = "ERROR_DETECTED: line " + \
+                                str(get_line_number(index, file_content)) + ", in " + \
+                                input_file_path + "\n"  # ERROR로 판단 및 메시지 출력
+                                f_output.write(text)
+                                sys.exit()
                             init_each_dfa(DFA_list)
                             success_DFA = init_success_dfa()
                             break

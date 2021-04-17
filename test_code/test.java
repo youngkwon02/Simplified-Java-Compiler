@@ -1,9 +1,9 @@
 public class test {
 
-	public static int main(String[] args) {
+	public static int main(String[] args, int args2) {
         char character = 'b' + 'c'-'b'-'a';
         int num = 1- -1- -2 -3;
-        int num2 = -1+3 = -1 -8(-3) + -2;
+        int num2 = -1 -8(-3) + -2;
         boolean case = true;
 
         while(case) {
