@@ -132,12 +132,12 @@ def main():
                     for success in success_DFA:  # 지금까지의 입력을 처리 가능했던 DFA의 항목들 중
                         if success == "ASSIGNMENT_OPERATOR": # 해당 DFA가 ASSIGNMENT OPERATOR DFA인데
                             if input_char == "=": # 새로운 Input이 '='라면, 이는 Assignment Oper가 아닌 Comparison Oper
-                                text = "<COMPARISON_OPERATOR> " + "==" + "\n"
+                                text = "COMPARISON_OPERATOR " + "==" + "\n"
                                 f_output.write(text)
                                 break
                                 
                             else: # 새로운 Input이 '='가 아니라면, 이는 Assignment Oper
-                                text = "<ASSIGNMENT_OPERATOR> " + \
+                                text = "ASSIGNMENT_OPERATOR " + \
                                     result[1] + "\n"
                                 f_output.write(text)
                                 index -= 1
@@ -145,7 +145,7 @@ def main():
 
                         elif success == "COMMA": # Comma DFA라면
                             if is_before_lparen(index-2, file_content): # 이전에 LEFT_PAREN이 나왔는지 확인하여, 나왔다면
-                                text = "<ARGS_SEPERATING_COMMA> ,\n" # 함수의 인자를 구분하는 Comma로 판단
+                                text = "ARGS_SEPERATING_COMMA ,\n" # 함수의 인자를 구분하는 Comma로 판단
                                 f_output.write(text)
                                 break
                             else: # LEFT_PAREN이 나오지 않았거나, LEFT_PAREN보다 RIGHT_PAREN이 뒤에 나왔다면, 이는 Seperating comma가 아니므로 처리할 수 없다고 판단
@@ -160,12 +160,11 @@ def main():
                                 if (result[1][0] == "-" and not (index-1 - len(result[1])) < 0 and check_before_input(index-1 - len(result[1]), file_content) not in ["=", '+', '-', '*', '/', "", '\n', ',', '(', '{', '[']):
                                     # -로 시작할 경우, 이는 ARITHMETIC OPER인지, SIGNED_INTEGER인지 판단 필요
                                     # 만약 -로 시작할 경우, Whitespace를 제외한 바로 직전의 문자가 +, -, *, /, =, '\n', ',', '(', '{', '[' 가 아니라면 이는 ARITH OPER
-                                    text = "<ARITHMETIC_OPERATOR> -\n"
+                                    text = "ARITHMETIC_OPERATOR -\n"
                                     index -= (len(result[1]) - 1)
                                     f_output.write(text)
                                 else:  # SIGNED_INTEGER를 포함한 일반적인 case such as an IDENTIFIER, ...
-                                    text = "<" + success + \
-                                        "> " + result[1] + "\n"
+                                    text = success+ " " + result[1] + "\n"
                                     f_output.write(text)
                             index -= 1
                             break
@@ -180,7 +179,7 @@ def main():
                                 # 아래 line에서 Index는 마지막 글자라서 보통 case보다 이미 1이 작음, index에서 1을 따로 빼지 않고 check_before_input
                                 if success == "COMMA":
                                     if is_before_lparen(index-1, file_content):
-                                        text = "<ARGS_SEPERATING_COMMA> ,\n"
+                                        text = "ARGS_SEPERATING_COMMA ,\n"
                                         f_output.write(text)
                                         break
                                     else:
@@ -190,8 +189,7 @@ def main():
                                         f_output.write(text)
                                         sys.exit()
                                 else:
-                                    text = "<" + success + \
-                                        "> " + result[1] + "\n"
+                                    text = success + " " + result[1] + "\n"
                                     f_output.write(text)
                             else:
                                 text = "ERROR_DETECTED(CAN NOT PROCESS a symbol): line " + \
