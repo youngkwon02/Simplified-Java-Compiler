@@ -22,4 +22,5 @@ def token_parser(file_path):
         parsed_token.append(TOKEN_CONVERT_TABLE.get(raw_token).get(token_value))
       else:
         parsed_token.append(TOKEN_CONVERT_TABLE.get(raw_token))
+  parsed_token.append("$")
   return parsed_token 
