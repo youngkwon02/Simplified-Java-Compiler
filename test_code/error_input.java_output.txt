@@ -1,3 +1,0 @@
-<IDENTIFIER> incorrect_symbol
-<ASSIGNMENT_OPERATOR> =
-ERROR_DETECTED(CAN NOT PROCESS a symbol): line 1, in error_input.java

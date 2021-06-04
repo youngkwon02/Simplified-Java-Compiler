@@ -1,18 +1,12 @@
 from token_convert_table import TOKEN_CONVERT_TABLE
 
+
 def read_input_file(file_path):
     file = open(file_path, mode='r', encoding='utf-8')
     return file
-  
 
-def write_output_file(file_name, token_list):
-  f_output = open(file_name, 'w')
-  for token in token_list:
-    f_output.write(token+"\n")
-  f_output.close()
   
-  
-def token_parser(file_path):
+def token_parser(file_path): # This function will convert Lexical output tokens to Syntax input tokens refering the Token_convert_table
   f = read_input_file(file_path)
   parsed_token = []
   while(True):
@@ -30,8 +24,5 @@ def token_parser(file_path):
         parsed_token.append(TOKEN_CONVERT_TABLE.get(raw_token).get(token_value))
       else:
         parsed_token.append(TOKEN_CONVERT_TABLE.get(raw_token))
-  f.close()
   parsed_token.append("$")
-  output_file = file_path + "_syntax_input.txt"
-  write_output_file(output_file, parsed_token)
   return parsed_token 
