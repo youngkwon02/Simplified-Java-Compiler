@@ -30,8 +30,10 @@ def main():
   while(True):
     current_state = state_stack[-1]
     options = SLR_PARSING_TABLE[current_state]
+    print(state_stack, next_input)
     if next_input not in options:
       print("Not acceptable! (unacceptable token: ", next_pointer," token", next_input, ")")
+      print(state_stack, next_input)
       return -1
     action = options[next_input]
     if action[0] == "s": # SHIFT AND GOTO
