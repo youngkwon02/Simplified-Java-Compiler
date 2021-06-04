@@ -1,3 +1,5 @@
+# CFG G's productions which ambiguities are totally removed
+
 PRODUCTION = [
   {"CODE" : "S"},
   {"VDECL CODE" : "CODE"},

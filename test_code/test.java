@@ -1,23 +1,22 @@
-public class test {
+class test {
+    String my_name = "Youngkwon Kim";
+    int age = 25;
+    char bloodType = "B";
+    String univ = "Chung-Ang Univ";
 
-	public static int main(String[] args, int args2) {
-        char character = 'b' + 'c'-'b'-'a';
-        int num = 1- -1- -2 -3;
-        int num2 = -1 -8(-3) + -2;
-        boolean case = true;
-
-        while(case) {
-            case = false != false;
-        }
-        String d_12 = "Hello Universe!";
-        index = 0;
-        if(index >= 0){
-            index += 1;
-            print("This is" + d_12);
-        }
-        print("index:");
-        print(index);
-		return 0;
+	String getName(){
+		return my_name;
 	}
 
+    int getAge(){
+        return age;
+    }
+
+    char getBloodType(){
+        return bloodType;
+    }
+
+    String getUniv(){
+        return univ;
+    }
 }

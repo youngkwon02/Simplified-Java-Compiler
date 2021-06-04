@@ -1,3 +1,6 @@
+# Token Convert Table
+# It convert the lexical analyzer output tokens to syntax input tokens (e.g. Convert SIGNED_INTEGER to num)
+
 TOKEN_CONVERT_TABLE = {
   "VTYPE": "vtype",
   "SIGNED_INTEGER": "num",
@@ -21,6 +24,7 @@ TOKEN_CONVERT_TABLE = {
   "ASSIGNMENT_OPERATOR": "assign",
   "COMPARISON_OPERATOR": "comp",
   "TERMINATING_SYMBOL": "semi",
+  "ARGS_SEPERATING_COMMA": "comma",
   "COMMA": "comma",
   "LEFT_PAREN": "lparen",
   "RIGHT_PAREN": "rparen",

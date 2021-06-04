@@ -1,3 +1,6 @@
+# SLR Parsing Table
+# It works for the state change of each step
+
 SLR_PARSING_TABLE = [
   # State 0
   {
