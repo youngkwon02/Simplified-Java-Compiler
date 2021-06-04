@@ -4,4 +4,4 @@
 
 |  # | TODO LIST  |
 |:----:|:------------:|
-| 1  |  a - 1 doesn't use SIGNED_INTEGER -1 |
+| 0  | NOTHING |
