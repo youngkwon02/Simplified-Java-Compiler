@@ -27,7 +27,7 @@ def goto(state, input): # Reduction 이후 GOTO를 위한 함수, 잘못되었�
     
   
 def main():
-  state_stack = [0]
+  state_stack = [0] # State를 누적 보관하는 Stack
   left_side = []
   next_pointer = 0 # 처리할 Input의 index 값 보관
   next_input = TOKEN_LIST[next_pointer] # next_pointer의 값을 통해 처리할 Input token에 접근

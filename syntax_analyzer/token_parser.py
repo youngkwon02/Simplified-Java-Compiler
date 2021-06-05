@@ -6,7 +6,7 @@ def read_input_file(file_path):
     return file
 
   
-def token_parser(file_path): # This function will convert Lexical output tokens to Syntax input tokens refering the Token_convert_table
+def token_parser(file_path): # This function will convert Lexical output tokens to Syntax input tokens referring to the Token_convert_table
   f = read_input_file(file_path)
   parsed_token = []
   while(True):
