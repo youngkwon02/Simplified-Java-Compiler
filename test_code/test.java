@@ -9,6 +9,9 @@ class test {
 	}
 
     int getAge(){
+        if(true){
+            int newAge = age + 1;
+        }
         return age;
     }
 
