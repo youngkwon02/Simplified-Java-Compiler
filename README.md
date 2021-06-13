@@ -1,4 +1,4 @@
-# Simplified_Java_Compiler
+# Simplified Java Compiler
 For 2021-01 CAU CSE Compiler Course<br>
 Handmade Compiler for simplified Java programming language.<br>
 <br>
