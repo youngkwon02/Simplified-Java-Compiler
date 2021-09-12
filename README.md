@@ -1,8 +1,8 @@
 # Simplified Java Compiler
 Handmade Compiler for simplified Java programming language.<br>
 #### Implementation
-- Lexical Analyzer to recognize each meaningful tokens from the given JAVA code.
-- Syntax Analyzer which checks given tokens are correct or not from the Lexer output.(Using CFG and SLR Parsing Table)
+- Lexical Analyzer : recognize each meaningful tokens from the given Java source code.
+- Syntax Analyzer : check given tokens are correct or not from the Lexer output.(Using CFG and SLR Parsing Table)
 
 --- 
 
