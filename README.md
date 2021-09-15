@@ -7,7 +7,7 @@ Handmade Compiler for simplified Java programming language.<br>
 
 --- 
 
-### Lexer DEMO
+### Lexer DEMO 
 <img width="350" alt="lexer" src="https://user-images.githubusercontent.com/39653584/122343032-3cef2080-cf80-11eb-82fa-905f0d1d65ce.png">
 
 ---
