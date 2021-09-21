@@ -3,7 +3,7 @@ Handmade ㅊompiler for simplified Java programming language.<br>
 #### ⚜️ Implementation
 - Lexical Analyzer : recognize each meaningful tokens from the given Java source code.
 - Syntax Analyzer : check given tokens are correct or not from the Lexer output.<br>
-  (Using CFG and SLR Parsing Table)
+  (Using CFG and SLR parsing table)
 
 --- 
 
